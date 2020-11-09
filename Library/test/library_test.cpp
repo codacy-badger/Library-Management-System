@@ -32,5 +32,29 @@ TEST(Book, getBookWithMaxPagesTest) {
   EXPECT_EQ("Computer Vision A Modern Approach", book.getBookWithMaxPages());
 }
 
+TEST(Library, countBooksBasedOnSubGenreTest) {
+  Library l1;
+  EXPECT_EQ(5, l1.countBooksBasedOnSubGenre("signal_processing"));
+  EXPECT_EQ(9, l1.countBooksBasedOnSubGenre("data_science"));
+  EXPECT_EQ(5, l1.countBooksBasedOnSubGenre("mathematics"));
+  EXPECT_EQ(10, l1.countBooksBasedOnSubGenre("economics"));
+  EXPECT_EQ(19, l1.countBooksBasedOnSubGenre("history"));
+  EXPECT_EQ(2, l1.countBooksBasedOnSubGenre("psychology"));
+  EXPECT_EQ(20, l1.countBooksBasedOnSubGenre("classic"));
+  EXPECT_EQ(5, l1.countBooksBasedOnSubGenre("computer_science"));
+  EXPECT_EQ(18, l1.countBooksBasedOnSubGenre("novel"));
+  EXPECT_EQ(1, l1.countBooksBasedOnSubGenre("science"));
+  EXPECT_EQ(5, l1.countBooksBasedOnSubGenre("physics"));
+  EXPECT_EQ(9, l1.countBooksBasedOnSubGenre("autobiography"));
+  EXPECT_EQ(1, l1.countBooksBasedOnSubGenre("objectivism"));
+  EXPECT_EQ(2, l1.countBooksBasedOnSubGenre("education"));
+  EXPECT_EQ(0, l1.countBooksBasedOnSubGenre("fiction"));
+}
+TEST(Book, getBookWithMinPagesTest) {
+  Book book;
+  EXPECT_EQ("Ashenden of The British Agent", book.getBookWithMinPages());
+}
+
+
 
 } // namespace
