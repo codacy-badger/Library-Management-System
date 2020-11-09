@@ -24,5 +24,3 @@ int Library::getNumberOfBooksBasedOnPublisher(std::string publisher) {
   }
   return count;
 }
-
-s
