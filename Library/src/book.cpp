@@ -70,52 +70,5 @@ std::string Book::getBookNameBasedOnID(int id) {
   else
   return row[1];
 }
-std::string Book::getBookWithMaxPages() {
-  fstream fin;
-  fin.open("books_new.csv");
-  int maxpages = 0;
-  std::string title;
-  vector<string> row;
-  string line, word, temp;
-  getline(fin, line);
-
-  while (getline(fin, line)) {
-    row.clear();
-    stringstream s(line);
-    while (getline(s, word, ',')) {
-      row.push_back(word);
-    }
-    m_pages = stoi(row[6]);
-    if (m_pages > maxpages) {
-      maxpages = m_pages;
-      title = row[1];
-    }
-  }
-  return title;
-}
-
-std::string Book::getBookWithMinPages() {
-  fstream fin;
-  fin.open("books_new.csv");
-  int minpages = 1000;
-  std::string title;
-  vector<string> row;
-  string line, word, temp;
-  getline(fin, line);
-
-  while (getline(fin, line)) {
-    row.clear();
-    stringstream s(line);
-    while (getline(s, word, ',')) {
-      row.push_back(word);
-    }
-    m_pages = stoi(row[6]);
-    if (m_pages < minpages) {
-      minpages = m_pages;
-      title = row[1];
-    }
-  }
-  return title;
-}
 
 
