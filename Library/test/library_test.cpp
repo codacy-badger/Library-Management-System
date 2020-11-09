@@ -12,6 +12,11 @@ TEST(Book, getBookWithMinPagesTest) {
   Book book;
   EXPECT_EQ("Ashenden of The British Agent", book.getBookWithMinPages());
 }
+TEST(Book, getBookWithMaxPagesTest) {
+  Book book;
+  EXPECT_EQ("Computer Vision A Modern Approach", book.getBookWithMaxPages());
+}
+
 
 
 } // namespace
