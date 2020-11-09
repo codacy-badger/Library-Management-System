@@ -24,3 +24,25 @@ int Library::getNumberOfBooksBasedOnPublisher(std::string publisher) {
   }
   return count;
 }
+int Library::countBooksBasedOnGenre(std::string genre) {
+  fstream fin;
+  fin.open("books_new.csv");
+  count = 0;
+  string genre1;
+  vector<string> row;
+  string line, word, temp;
+  getline(fin, line);
+
+  while (getline(fin, line)) {
+    row.clear();
+    stringstream s(line);
+    while (getline(s, word, ',')) {
+      row.push_back(word);
+    }
+    genre1 = row[4];
+    if (genre.compare(genre1) == 0) {
+      count++;
+    }
+  }
+  return count;
+}
