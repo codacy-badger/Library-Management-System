@@ -46,3 +46,25 @@ int Library::countBooksBasedOnGenre(std::string genre) {
   }
   return count;
 }
+int Library::countBooksBasedOnSubGenre(std::string subGenre) {
+  fstream fin;
+  fin.open("books_new.csv");
+  count = 0;
+  string subGenre1;
+  vector<string> row;
+  string line, word, temp;
+  getline(fin, line);
+
+  while (getline(fin, line)) {
+    row.clear();
+    stringstream s(line);
+    while (getline(s, word, ',')) {
+      row.push_back(word);
+    }
+    subGenre1 = row[5];
+    if (subGenre.compare(subGenre1) == 0) {
+      count++;
+    }
+  }
+  return count;
+}
