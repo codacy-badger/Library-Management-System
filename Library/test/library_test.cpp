@@ -55,6 +55,18 @@ TEST(Book, getBookWithMinPagesTest) {
   EXPECT_EQ("Ashenden of The British Agent", book.getBookWithMinPages());
 }
 
+TEST(Library, countBooksBasedOnGenreAndSubGenreTest) {
+  Library l1;
+  EXPECT_EQ(0, l1.countBooksBasedOnGenreAndSubGenre("science","data_science"));
+  EXPECT_EQ(2, l1.countBooksBasedOnGenreAndSubGenre("tech","mathematics"));
+  EXPECT_EQ(20, l1.countBooksBasedOnGenreAndSubGenre("fiction","classic"));
+}
+
+TEST(Book, getBookNameBasedOnIDTest) {
+  Book book;
+  EXPECT_EQ("Age of Wrath", book.getBookNameBasedOnID(15));
+  EXPECT_EQ("Doctor in the Nude", book.getBookNameBasedOnID(100));
+}
 
 
 } // namespace
