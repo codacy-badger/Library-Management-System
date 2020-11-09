@@ -45,3 +45,30 @@ fstream fin;
     
 return "Book removed successfully"; }
 
+std::string Book::getBookNameBasedOnID(int id) {
+  fstream fin;
+  fin.open("books_new.csv");
+  int count = 0;
+  vector<string> row;
+  string line, word, temp;
+  getline(fin, line);
+
+  while (getline(fin, line)) {
+    row.clear();
+    stringstream s(line);
+    while (getline(s, word, ',')) {
+      row.push_back(word);
+    }
+    m_id= stoi(row[0]);
+    if (m_id == id) {
+      count ++;
+      break;
+    }
+    
+  }
+  if(count == 0) return "Sorry!! No book found\n";
+  else
+  return row[1];
+}
+
+
