@@ -1,4 +1,5 @@
 all: all.out 
+all:./all.out
 all.out : book.o operations.o library_test.o
 	g++ $^ -o $@ -lgtest -lgtest_main -lpthread
 library_test.o : test/library_test.cpp 
