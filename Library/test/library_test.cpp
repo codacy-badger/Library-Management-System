@@ -1,4 +1,4 @@
-#include "operations.h"
+#include "../inc/operations.h"
 
 #include <gtest/gtest.h>
 namespace {

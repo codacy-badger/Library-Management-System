@@ -1,5 +1,5 @@
-#include "operations.h"
-#include "book.cpp"
+#include "../inc/operations.h"
+//#include "book.cpp"
 
 int Library::getNumberOfBooksBasedOnPublisher(std::string publisher) {
 
