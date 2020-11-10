@@ -7,5 +7,7 @@ operations.o : src/operations.cpp inc/operations.h
 	g++ $< -c    
 book.o : src/book.cpp inc/book.h
 	g++ $< -c
+run:
+	./all.out
 clean:
 	rm -rf *.o *.out

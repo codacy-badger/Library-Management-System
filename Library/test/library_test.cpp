@@ -5,7 +5,7 @@ namespace {
 
 TEST(Book, getNumberOfBooksBasedOnPublisherTest) {
   Library l1;
-  EXPECT_EQ(2, l1.getNumberOfBooksBasedOnPublisher("Wiley"));
+  EXPECT_EQ(1, l1.getNumberOfBooksBasedOnPublisher("Wiley"));
   EXPECT_EQ(35, l1.getNumberOfBooksBasedOnPublisher("Penguin"));
   EXPECT_EQ(6, l1.getNumberOfBooksBasedOnPublisher("HarperCollins"));
   EXPECT_EQ(3, l1.getNumberOfBooksBasedOnPublisher("Springer"));
@@ -21,8 +21,8 @@ TEST(Book, getNumberOfBooksBasedOnPublisherTest) {
 TEST(Library, countBooksBasedOnGenreTest) {
   Library l1;
   EXPECT_EQ(13, l1.countBooksBasedOnGenre("science"));
-  EXPECT_EQ(24, l1.countBooksBasedOnGenre("tech"));
-  EXPECT_EQ(38, l1.countBooksBasedOnGenre("fiction"));
+  EXPECT_EQ(23, l1.countBooksBasedOnGenre("tech"));
+  EXPECT_EQ(37, l1.countBooksBasedOnGenre("fiction"));
   EXPECT_EQ(36, l1.countBooksBasedOnGenre("nonfiction"));
   EXPECT_EQ(9, l1.countBooksBasedOnGenre("philosophy"));
   EXPECT_EQ(0, l1.countBooksBasedOnGenre("nonscience"));
@@ -34,13 +34,13 @@ TEST(Book, getBookWithMaxPagesTest) {
 
 TEST(Library, countBooksBasedOnSubGenreTest) {
   Library l1;
-  EXPECT_EQ(5, l1.countBooksBasedOnSubGenre("signal_processing"));
+  EXPECT_EQ(4, l1.countBooksBasedOnSubGenre("signal_processing"));
   EXPECT_EQ(9, l1.countBooksBasedOnSubGenre("data_science"));
   EXPECT_EQ(5, l1.countBooksBasedOnSubGenre("mathematics"));
   EXPECT_EQ(10, l1.countBooksBasedOnSubGenre("economics"));
   EXPECT_EQ(19, l1.countBooksBasedOnSubGenre("history"));
   EXPECT_EQ(2, l1.countBooksBasedOnSubGenre("psychology"));
-  EXPECT_EQ(20, l1.countBooksBasedOnSubGenre("classic"));
+  EXPECT_EQ(19, l1.countBooksBasedOnSubGenre("classic"));
   EXPECT_EQ(5, l1.countBooksBasedOnSubGenre("computer_science"));
   EXPECT_EQ(18, l1.countBooksBasedOnSubGenre("novel"));
   EXPECT_EQ(1, l1.countBooksBasedOnSubGenre("science"));
@@ -59,7 +59,7 @@ TEST(Library, countBooksBasedOnGenreAndSubGenreTest) {
   Library l1;
   EXPECT_EQ(0, l1.countBooksBasedOnGenreAndSubGenre("science", "data_science"));
   EXPECT_EQ(2, l1.countBooksBasedOnGenreAndSubGenre("tech", "mathematics"));
-  EXPECT_EQ(20, l1.countBooksBasedOnGenreAndSubGenre("fiction", "classic"));
+  EXPECT_EQ(19, l1.countBooksBasedOnGenreAndSubGenre("fiction", "classic"));
 }
 
 TEST(Book, getBookNameBasedOnIDTest) {

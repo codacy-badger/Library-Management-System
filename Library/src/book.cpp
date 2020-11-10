@@ -18,7 +18,7 @@ std::string Book::deleteBook(int id) {
   fstream fin;
   fstream fout;
   fin.open("books_new.csv", ios::in);
-  fout.open("new.csv", ios::out | ios::app);
+  fout.open("books_new.csv", ios::out | ios::app);
 
   vector<string> row;
   string line, word, temp;
@@ -39,7 +39,7 @@ std::string Book::deleteBook(int id) {
   fin.close();
 
   remove("books_new.csv");
-  rename("new.csv", "books_new.csv");
+  rename("books_new.csv", "books_new.csv");
 
   return "Book removed successfully";
 }
