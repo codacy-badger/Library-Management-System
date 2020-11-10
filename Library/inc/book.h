@@ -9,7 +9,7 @@
 using namespace std;
 
 class Book {
-int m_id;
+  int m_id;
   std::string m_title;
   std::string m_author1;
   std::string m_author2;

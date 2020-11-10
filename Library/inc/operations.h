@@ -4,13 +4,13 @@
 #include "book.h"
 
 class Library {
-int count;
+  int count;
 
 public:
   int getNumberOfBooksBasedOnPublisher(std::string);
   int countBooksBasedOnGenre(std::string);
   int countBooksBasedOnSubGenre(std::string);
-  int countBooksBasedOnGenreAndSubGenre(std::string,std::string);
+  int countBooksBasedOnGenreAndSubGenre(std::string, std::string);
 };
 
 #endif

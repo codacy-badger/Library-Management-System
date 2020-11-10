@@ -6,7 +6,7 @@ namespace {
 TEST(Book, getNumberOfBooksBasedOnPublisherTest) {
   Library l1;
   EXPECT_EQ(2, l1.getNumberOfBooksBasedOnPublisher("Wiley"));
-  EXPECT_EQ(35,l1.getNumberOfBooksBasedOnPublisher("Penguin"));
+  EXPECT_EQ(35, l1.getNumberOfBooksBasedOnPublisher("Penguin"));
   EXPECT_EQ(6, l1.getNumberOfBooksBasedOnPublisher("HarperCollins"));
   EXPECT_EQ(3, l1.getNumberOfBooksBasedOnPublisher("Springer"));
   EXPECT_EQ(1, l1.getNumberOfBooksBasedOnPublisher("CRC"));
@@ -57,9 +57,9 @@ TEST(Book, getBookWithMinPagesTest) {
 
 TEST(Library, countBooksBasedOnGenreAndSubGenreTest) {
   Library l1;
-  EXPECT_EQ(0, l1.countBooksBasedOnGenreAndSubGenre("science","data_science"));
-  EXPECT_EQ(2, l1.countBooksBasedOnGenreAndSubGenre("tech","mathematics"));
-  EXPECT_EQ(20, l1.countBooksBasedOnGenreAndSubGenre("fiction","classic"));
+  EXPECT_EQ(0, l1.countBooksBasedOnGenreAndSubGenre("science", "data_science"));
+  EXPECT_EQ(2, l1.countBooksBasedOnGenreAndSubGenre("tech", "mathematics"));
+  EXPECT_EQ(20, l1.countBooksBasedOnGenreAndSubGenre("fiction", "classic"));
 }
 
 TEST(Book, getBookNameBasedOnIDTest) {
@@ -67,6 +67,5 @@ TEST(Book, getBookNameBasedOnIDTest) {
   EXPECT_EQ("Age of Wrath", book.getBookNameBasedOnID(15));
   EXPECT_EQ("Doctor in the Nude", book.getBookNameBasedOnID(100));
 }
-
 
 } // namespace

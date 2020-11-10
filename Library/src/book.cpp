@@ -1,8 +1,9 @@
 #include "book.h"
 
 std::string Book::addBook(int id, std::string title, std::string author1,
-                     std::string author2, std::string genre,
-                     std::string subGenre, int pages, std::string publisher) {
+                          std::string author2, std::string genre,
+                          std::string subGenre, int pages,
+                          std::string publisher) {
   fstream fin;
   fin.open("books_new.csv");
   fin.seekg(0, ios::end);
@@ -13,14 +14,13 @@ std::string Book::addBook(int id, std::string title, std::string author1,
   return "Book added successfully";
 }
 
+std::string Book::deleteBook(int id) {
+  fstream fin;
+  fstream fout;
+  fin.open("books_new.csv", ios::in);
+  fout.open("new.csv", ios::out | ios::app);
 
-std::string Book::deleteBook(int id) { 
-fstream fin;
-    fstream fout;
-    fin.open("books_new.csv", ios::in);
-    fout.open("new.csv",ios::out | ios::app);
-
-    vector<string> row;
+  vector<string> row;
   string line, word, temp;
   getline(fin, line);
 
@@ -29,21 +29,20 @@ fstream fin;
     stringstream s(line);
     while (getline(s, word, ',')) {
       row.push_back(word);
-      
     }
-    if(id != stoi(row[0])){
-    fout << line << endl;
+    if (id != stoi(row[0])) {
+      fout << line << endl;
+    }
+  }
 
-    }
-    }
-  
-    fout.close();
-    fin.close();
+  fout.close();
+  fin.close();
 
-    remove("books_new.csv");
-    rename("new.csv", "books_new.csv");
-    
-return "Book removed successfully"; }
+  remove("books_new.csv");
+  rename("new.csv", "books_new.csv");
+
+  return "Book removed successfully";
+}
 
 std::string Book::getBookNameBasedOnID(int id) {
   fstream fin;
@@ -59,16 +58,16 @@ std::string Book::getBookNameBasedOnID(int id) {
     while (getline(s, word, ',')) {
       row.push_back(word);
     }
-    m_id= stoi(row[0]);
+    m_id = stoi(row[0]);
     if (m_id == id) {
-      count ++;
+      count++;
       break;
     }
-    
   }
-  if(count == 0) return "Sorry!! No book found\n";
+  if (count == 0)
+    return "Sorry!! No book found\n";
   else
-  return row[1];
+    return row[1];
 }
 std::string Book::getBookWithMaxPages() {
   fstream fin;
@@ -117,5 +116,3 @@ std::string Book::getBookWithMinPages() {
   }
   return title;
 }
-
-

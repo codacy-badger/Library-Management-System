@@ -81,7 +81,8 @@ int main() {
         std::cout << std::setw(54) << "4.Book with minimum pages\n";
         std::cout << std::setw(56) << "5.Book count based on Genre\n";
         std::cout << std::setw(60) << "6.Book count based on Sub-Genre\n";
-        std::cout << std::setw(70) << "7.Book count based on Genre and Sub-Genre\n";
+        std::cout << std::setw(70)
+                  << "7.Book count based on Genre and Sub-Genre\n";
         std::cout << std::setw(35) << "8.Exit\n";
         int choice1;
         while (1) {
@@ -129,17 +130,16 @@ int main() {
           cout << endl;
           cout << l.countBooksBasedOnSubGenre(subGenre) << endl;
           break;
-         case 7:
-         cout << "Enter the genre: ";
+        case 7:
+          cout << "Enter the genre: ";
           cin >> genre;
           cout << endl;
 
           cout << "Enter the subGenre: ";
           cin >> subGenre;
           cout << endl;
-          cout << l.countBooksBasedOnGenreAndSubGenre(genre,subGenre) << endl;
+          cout << l.countBooksBasedOnGenreAndSubGenre(genre, subGenre) << endl;
           break;
-
 
         default:
           return 0;
