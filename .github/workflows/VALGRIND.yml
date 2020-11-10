@@ -20,4 +20,4 @@ jobs:
     - name: make test
       run: |
         make test -C Library/
-        valgrind ./Library/all.out
+        valgrind ./all.out
